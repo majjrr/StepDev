@@ -1,0 +1,297 @@
+<!-- $10K LANDING • APPLE-STYLE • STEPDEV -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>StepDev — Premium Student IT Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+<style>
+/* SCROLL INERTIA */
+html{scroll-behavior:auto}
+body{scrollbar-width:none}
+::-webkit-scrollbar{display:none}
+
+/* DYNAMIC BACKGROUND */
+.bg-dynamic{position:fixed;inset:-20%;background:radial-gradient(circle at center,#1b1b1b,#050505 60%);z-index:-2;transition:transform .2s ease-out}
+
+/* BACKGROUND CIRCLES */
+.bg-circles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(212,175,55,.1);
+  animation: float 20s linear infinite;
+}
+.circle:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 20%; animation-duration: 25s; }
+.circle:nth-child(2) { width: 150px; height: 150px; top: 40%; left: 50%; animation-duration: 30s; }
+.circle:nth-child(3) { width: 80px; height: 80px; top: 70%; left: 80%; animation-duration: 20s; }
+.circle:nth-child(4) { width: 120px; height: 120px; top: 20%; left: 70%; animation-duration: 35s; }
+.circle:nth-child(5) { width: 200px; height: 200px; top: 60%; left: 10%; animation-duration: 40s; }
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(50px, 50px); }
+  100% { transform: translate(0, 0); }
+}
+
+:root{--gold:#d4af37;--bg:#050505;--card:#0f0f10}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Russo One',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;overflow-x:hidden;font-size:18px}
+
+/* ULTRA SMOOTH SCROLL */
+body{scrollbar-width:none}
+::-webkit-scrollbar{display:none}
+
+section{padding:140px 8%;position:relative}
+
+/* GRAIN */
+body::after{content:"";position:fixed;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>');pointer-events:none;z-index:999}
+
+.reveal{opacity:0;transform:translateY(80px);transition:1.2s cubic-bezier(.19,1,.22,1)}
+.reveal.active{opacity:1;transform:none}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center}
+.hero h1{font-size:clamp(56px,8vw,110px);font-weight:800;line-height:1}
+.hero span{color:var(--gold);text-shadow:0 0 50px rgba(212,175,55,.55)}
+.hero p{margin-top:40px;font-size:24px;max-width:880px;opacity:.82;line-height:1.6}
+
+/* TEXT ANIMATION */
+.word span{display:inline-block;opacity:0;transform:translateY(30px)}
+
+/* GALLERY */
+.gallery{overflow:hidden;cursor:grab}
+.track{display:flex;gap:48px;will-change:transform; animation: scroll 10s linear infinite;}
+.track img{height:380px;border-radius:32px;flex-shrink:0;transition:.5s}
+.track img:hover{transform:scale(1.1)}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px}
+.card{background:linear-gradient(145deg,#0e0e10,#171718);padding:44px;border-radius:32px;transition:.6s;font-size:20px;line-height:1.6}
+.card:hover{transform:translateY(-18px);box-shadow:0 40px 120px rgba(212,175,55,.18)}
+
+/* NUMBERS */
+.stat{font-size:64px;font-weight:700;color:var(--gold)}
+
+/* PROCESS */
+.process .card{border-left:3px solid var(--gold)}
+
+/* REVIEWS */
+.reviews .card{background:linear-gradient(145deg,#0e0e10,#171718);padding:44px;border-radius:32px;transition:.6s;font-size:20px;line-height:1.6;position:relative}
+.reviews .card::before{content:'“';font-size:80px;color:var(--gold);position:absolute;top:10px;left:20px;opacity:0.3}
+.reviews .card::after{content:'”';font-size:80px;color:var(--gold);position:absolute;bottom:10px;right:20px;opacity:0.3}
+.reviews .author{margin-top:20px;font-style:italic;font-size:18px;color:var(--gold)}
+
+/* FAQ */
+.faq-item{margin-bottom:20px;border-bottom:1px solid rgba(212,175,55,.2)}
+.faq button{width:100%;background:linear-gradient(to right, transparent, rgba(212,175,55,.1));border:none;color:var(--gold);font-size:24px;text-align:left;padding:24px 0;cursor:pointer;transition:.3s;position:relative}
+.faq button::after{content:'+';position:absolute;right:0;font-size:28px;color:var(--gold)}
+.faq button.active::after{content:'-'}
+.answer{max-height:0;overflow:hidden;transition:.6s;opacity:.75;line-height:1.7;font-size:20px;padding:0 0 20px 0}
+
+/* CONTACT */
+.contact a{display:inline-block;margin-top:40px;padding:22px 48px;border-radius:60px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:20px;transition:.4s}
+.contact a:hover{background:var(--gold);color:#000}
+
+@media(max-width:768px){section{padding:100px 6%}.track img{height:260px}.hero p{font-size:20px}.stat{font-size:48px}.card{font-size:18px}.faq button{font-size:20px}.answer{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="bg-dynamic"></div>
+<div class="bg-circles">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+
+<section class="hero reveal">
+<div>
+<h1 class="word">Step<span>Dev</span></h1>
+<p class="word">Лучшая помощь студентам: лабораторные, курсовые и дипломные работы под ключ — спокойно, честно и с результатом на 5 с первого раза. Мы специализируемся на IT и технических дисциплинах, юридические и медицинские сферы, социальные проекты, программирование на языках таких как Python, Java, C++, базы данных (SQL, NoSQL), веб-разработку (HTML, CSS, JavaScript, React, Node.js), мобильную разработку (Android, iOS), машинное обучение, искусственный интеллект и многое другое. Наша команда состоит из опытных разработчиков, инженеров и преподавателей с многолетним стажем, которые помогут вам не только успешно сдать работу, но и глубоко понять материал, чтобы вы могли уверенно отвечать на вопросы преподавателей. Мы гарантируем индивидуальный подход, полную конфиденциальность и высокое качество исполнения.</p>
+
+</div>
+</section>
+
+<section class="reviews reveal">
+<div class="grid">
+
+<div class="card">Нашу команду рекомендуют те же студенты, которые сами и приобретали услуги StepDev.<div class="author">- А**** (Топ менеджер команды)</div></div>
+<div class="card">Помните, конечная цель вашей жизни - прожить счастливую, а не занятую жизнь.<div class="author">- Степан Сергеевич (CEO, эксперт IT дисциплин)</div></div>
+</div>
+</section>
+
+
+
+<section class="gallery reveal">
+<div class="track">
+
+<img src="" alt="">
+
+<img src="" alt="">
+<img src="https://i.postimg.cc/tC2xwSTL/photo-2026-01-29-17-51-42.jpg" alt="">
+    <img src="https://s6.iimage.su/s/30/th_g9ToDfpx6nn1Bzi7cdA1GsMs1PYFztOjJPqAeGPq.jpg" alt="">
+
+<img src="https://s6.iimage.su/s/30/th_glksOpqxonoAPLh7q30bJLSheSEam2smdLmUzRQ6.jpg" alt="">
+<img src="https://i.postimg.cc/tC2xwSTL/photo-2026-01-29-17-51-42.jpg" alt="">
+<img src="" alt="">
+<img src="https://i.postimg.cc/RVKMnNrb/68747470733a2f2f692e706f7374696d672e63632f4e463974674c466b2f3430352d45382d4442442d362d4643342d342d45.png" alt="">
+<img src="https://i.postimg.cc/2SCfbG7z/image.png" alt="">
+<img src="" alt="">
+<img src="https://i.postimg.cc/68RhznxY/image.png" alt="">
+</div>
+</section>
+
+<section class="reveal">
+<h2>Нам доверяют</h2>
+<div class="grid">
+<div class="card"><div class="stat">2200+</div>академических часов опыта, накопленных нашей командой в различных IT-дисциплинах</div>
+<div class="card"><div class="stat">240+</div>работ без возвратов, каждая из которых была принята с первого раза</div>
+<div class="card"><div class="stat">500+</div>довольных студентов, которые успешно защитили свои проекты</div>
+<div class="card"><div class="stat">150+</div>дипломных проектов, выполненных на заказ с отличными оценками</div>
+<div class="card">Работаем строго по ГОСТ, методичкам и индивидуальным требованиям вашего ВУЗа, обеспечивая полное соответствие стандартам</div>
+<div class="card">Бесплатные доработки даже после защиты, чтобы вы были полностью удовлетворены результатом</div>
+<div class="card">Антиплагиат + подробный отчет включены в стоимость, гарантируя оригинальность работы</div>
+<div class="card">Помощь с защитой и речью, включая подготовку ответов на возможные вопросы комиссии</div>
+<div class="card">Консультации по коду и отладке, чтобы вы могли самостоятельно разобраться в проекте</div>
+<div class="card">Разработка прототипов приложений с использованием современных технологий и фреймворков</div>
+</div>
+</section>
+
+<section class="process reveal">
+<h2>Как проходит выполнение дипломной работы</h2>
+<div class="grid">
+<div class="card">Подробный анализ темы, требований кафедры и методички: мы тщательно изучаем все материалы, чтобы понять ожидания и специфику вашего задания</div>
+<div class="card">Согласование структуры и плана диплома: совместно с вами разрабатываем детальный план, чтобы работа была логичной и корректной</div>
+<div class="card">Пошаговое написание глав с проверками: каждая глава пишется поэтапно, с промежуточными проверками на соответствие и качество</div>
+<div class="card">Оформление по ГОСТ + антиплагиат: обеспечиваем правильное форматирование и высокую уникальность текста</div>
+<div class="card">Подготовка презентации и речи: создаем профессиональную презентацию и текст речи для уверенной защиты</div>
+<div class="card">Сопровождение до самой защиты: мы на связи на всех этапах, включая день защиты, для оперативной помощи</div>
+<div class="card">Дополнительные консультации по теме: отвечаем на все ваши вопросы и объясняем сложные моменты</div>
+<div class="card">Тестирование кода и приложений: проводим пробные тесты, чтобы убедиться в работоспособности проекта</div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Стоимость услуг</h2>
+<div class="grid">
+<div class="card">Лабораторные / практические — от 1200 ₽: быстрые и точные решения для ваших заданий по программированию и IT</div>
+<div class="card">Курсовые работы — от 9200 ₽: комплексные проекты с теорией, практикой и анализом</div>
+<div class="card">Дипломные проекты — индивидуальный расчёт: цена зависит от сложности, объема и сроков</div>
+<div class="card">Итоговые проекты + презентация — от 2500 ₽: полный пакет для успешной сдачи</div>
+<div class="card">Презентации (дизайнер) — 450 ₽: стильные и профессиональные слайды от дизайнера</div>
+<div class="card">Индивидуальное обучение — от 550 ₽/час: персональные уроки по IT-темам</div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>География работы</h2>
+<div class="grid">
+<div class="card">Москва</div>
+    <div class="card">Ростов-на-Дону</div>
+
+<div class="card">Санкт‑Петербург: поддержка для студентов северной столицы</div>
+<div class="card">Казань: работа с вузами Поволжья</div>
+<div class="card">Новосибирск: помощь сибирским студентам</div>
+<div class="card">Краснодар: южные вузы и теплый подход</div>
+<div class="card">Владивосток: дальневосточные проекты</div>
+<div class="card">Самара: волжские университеты</div>
+<div class="card">Ейск: кубанские студенты</div>
+<div class="card">Работаем онлайн по всей России и СНГ: без границ.</div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Наши истории успеха</h2>
+<p>Мы помогли сотням студентов достичь академических высот. Вот несколько примеров: студент из Ростова сдал диплом по машинному обучению на отлично благодаря нашей помощи в разработке модели и анализе данных. Другой клиент из Владивостока успешно защитил курсовую по веб-разработке, получив похвалу от преподавателя за чистый код и инновационный подход. Студентка из Краснодара сдала лабораторные по базам данных без единой ошибки, благодаря нашим подробным объяснениям. Мы гордимся тем, что наши клиенты не только сдают работы, но и приобретают реальные навыки, которые помогают в будущей карьере. Многие возвращаются к нам за новыми проектами и рекомендуют друзьям.</p>
+</section>
+
+<section class="reviews reveal">
+<h2>Отзывы наших клиентов</h2>
+<div class="grid">
+<div class="card">Огромное спасибо Степану! Всегда на связи, отвечает оперативно. Работу выполняет быстро, качественно и на высоком уровне. Обязательно буду обращаться ещё!<div class="author">- Максим, Санкт-Петербург</div></div>
+<div class="card">Курсовая по веб-разработке получилась идеальной. Команда всегда на связи, помогли с презентацией. Спасли мои нервы!<div class="author">- М*****, Владивосток</div></div>
+<div class="card">Лабораторные по программированию сделали быстро и качественно. Антиплагиат 100%, преподаватель в восторге<div class="author">- Дмитрий, Ростов-на-Дону</div></div>
+<div class="card">Протестил твое приложение на flet реально круто все летает интерфейс стильный современный переходы быстрые даже на моем старом ноуте не лагает навигация удобная темная тема вообще огонь глазам приятно для диплома уровень огонь выглядит как нормальный продукт а не студенческая фигня респект брат сделано с душой, я бы сказал божественно<div class="author">- А***, Ейск</div></div>
+<div class="card">Портфолио для стипендии сделали отлично: всё структурировано, требования учтены. А самое главное быстро и в срок.<div class="author">- Т***, Ейск</div></div>
+<div class="card">Обратилась за помощью с лабораторной. Результат опрадал все ожидания, внешний вид максимально обрадовал. Исполнитель проявил глубокое понимание темы, за что я премного благодарна<div class="author">- Анастасия, Краснодар</div></div>
+
+</div>
+</section>
+
+<section class="faq reveal">
+<h2>FAQ</h2>
+<div class="faq-item"><button>Это безопасно?</button><div class="answer">Да. Мы не используем шаблоны и нейросети для финального результата. Все работы пишутся вручную экспертами, обеспечивая полную оригинальность и конфиденциальность. Ваши данные защищены, и мы никогда не разглашаем информацию о клиентах.</div></div>
+<div class="faq-item"><button>А если срочно?</button><div class="answer">Берёмся даже за экстренные дедлайны. Если срок горит, мы мобилизуем команду и выполним работу в сжатые сроки без потери качества.</div></div>
+<div class="faq-item"><button>Можно ли общаться напрямую?</button><div class="answer">Да, всегда на связи в Telegram. Вы можете общаться напрямую с исполнителем через Степана, задавать вопросы, вносить корректировки и получать обновления в реальном времени.</div></div>
+<div class="faq-item"><button>Что если работа не понравится?</button><div class="answer">Мы предоставляем бесплатные доработки до полного удовлетворения. Если что-то не так, мы исправим в кратчайшие сроки, чтобы результат соответствовал вашим ожиданиям на 100%.</div></div>
+<div class="faq-item"><button>Работаете ли вы с иностранными студентами?</button><div class="answer">Да, мы помогаем студентам из СНГ и других стран. Независимо от вашего местоположения, мы адаптируем работы под требования вашего вуза и языка.</div></div>
+<div class="faq-item"><button>Как происходит оплата?</button><div class="answer">Всегда полная предоплата, для вашего и нашего спокойствия, чтобы избегать конфликтных моментов.</div></div>
+<div class="faq-item"><button>Какие гарантии качества?</button><div class="answer">Все работы проверяются на плагиат и соответствие требованиям. Мы предоставляем отчет антиплагиата, гарантируем оценки 4-5 и полное сопровождение до защиты.</div></div>
+<div class="faq-item"><button>Как начать сотрудничество?</button><div class="answer">Просто напишите в Telegram, опишите задачу, и мы оперативно оценим стоимость и сроки. Консультация бесплатна!</div></div>
+<div class="faq-item"><button>Мне помощь не нужна, но хочу стать вашим партнером:</button><div class="answer">Приводите клиентов = получаете % от прибыли. Всё просто. Обсудим все подробности в Telegram!</div></div>
+</section>
+
+<section class="contact reveal">
+<h2>Готовы начать?</h2>
+<p>Заказывая сейчас — ты экономишь время, нервы и получаешь уверенность на защите. Не откладывай успех на потом! С нами вы получите не просто работу, а полноценную поддержку на пути к отличной оценке и знаниям.</p>
+<a href="https://t.me/majworker" target="_blank">Написать в Telegram</a>
+</section>
+
+<script>
+// REVEAL
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('active')),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// TEXT LETTER ANIMATION (исправленная версия)
+document.querySelectorAll('.word').forEach(el => {
+  const text = el.innerText;
+  el.innerHTML = '';
+  [...text].forEach((l, i) => {
+    const s = document.createElement('span');
+    if (l === ' ') {
+      s.innerHTML = '&nbsp;';  // неразрывный пробел — фикс проблемы
+    } else {
+      s.textContent = l;
+    }
+    s.style.transition = `.6s ${i * 0.03}s`;
+    s.style.opacity = '0';
+    s.style.transform = 'translateY(30px)';
+    el.appendChild(s);
+  });
+  setTimeout(() => {
+    el.querySelectorAll('span').forEach(s => {
+      s.style.opacity = '1';
+      s.style.transform = 'none';
+    });
+  }, 500);
+});
+// FAQ
+document.querySelectorAll('.faq button').forEach(b=>b.onclick=()=>{const a=b.nextElementSibling;a.style.maxHeight?a.style.maxHeight=null:a.style.maxHeight=a.scrollHeight+'px';b.classList.toggle('active')})
+
+// DRAG GALLERY
+const track=document.querySelector('.track');let d=false,x,s;
+track.addEventListener('mousedown',e=>{d=true;x=e.pageX;s=track.scrollLeft});
+track.addEventListener('mouseup',()=>d=false);
+track.addEventListener('mouseleave',()=>d=false);
+track.addEventListener('mousemove',e=>{if(!d)return;track.scrollLeft=s-(e.pageX-x)});
+track.addEventListener('touchstart',e=>{x=e.touches[0].pageX;s=track.scrollLeft});
+track.addEventListener('touchmove',e=>{track.scrollLeft=s-(e.touches[0].pageX-x)});
+</script>
+
+</body>
+</html>
